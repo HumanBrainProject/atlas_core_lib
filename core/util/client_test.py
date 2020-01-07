@@ -4,7 +4,8 @@ from requests import RequestException
 from core.util import client
 
 json_header = {'Content-Type': 'application/json'}
-base_url = 'dummy-test-url'
+base_url = 'http://s2i-java-atlas-core.apps-dev.hbp.eu'
+dummy_url = '/dummy-test-url'
 
 
 def _mock_response(status=200, content="CONTENT"):
@@ -24,16 +25,17 @@ class TestRequestsCall(TestCase):
         mock_resp = _mock_response(content=self.valid_result_data)
         mock_get.return_value = mock_resp
 
-        result = client.get_call(base_url, json_header)
+        result = client.get_call(dummy_url, header=json_header)
         self.assertEqual(result.content, self.valid_result_data)
         self.assertEqual(result.status_code, 200)
+        mock_get.assert_called_with(base_url + dummy_url, headers=json_header)
 
     @mock.patch('requests.get')
     def test_content_not_none_but_wrong_status(self, mock_get):
         mock_resp = _mock_response(content=self.valid_result_data, status=418)
         mock_get.return_value = mock_resp
 
-        result = client.get_call(base_url, json_header)
+        result = client.get_call(dummy_url, header=json_header)
         self.assertEqual(result, None)
 
     @mock.patch('requests.get')
@@ -41,15 +43,25 @@ class TestRequestsCall(TestCase):
         mock_resp = None
         mock_get.return_value = mock_resp
 
-        result = client.get_call(base_url, json_header)
+        result = client.get_call(dummy_url, header=json_header)
         self.assertEqual(result, None)
 
     @mock.patch('requests.get')
     def test_requests_throws_exception(self, mock_get):
         mock_get.side_effect = RequestException()
 
-        result = client.get_call(base_url, json_header)
+        result = client.get_call(dummy_url, header=json_header)
         self.assertEqual(result, None)
+
+    @mock.patch('requests.get')
+    def test_valid_response_without_base_url(self, mock_get):
+        mock_resp = _mock_response(content=self.valid_result_data)
+        mock_get.return_value = mock_resp
+        url = 'http://my-full-url'
+        result = client.get_call(url, without_base_url=True, header=json_header)
+        self.assertEqual(result.content, self.valid_result_data)
+        self.assertEqual(result.status_code, 200)
+        mock_get.assert_called_with(url, headers=json_header)
 
 
 if __name__ == '__main__':

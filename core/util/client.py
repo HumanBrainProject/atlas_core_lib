@@ -3,13 +3,16 @@ import os
 
 json_header = {'Content-Type': 'application/json'}
 zip_header = {'Content-Type': 'application/zip'}
-base_url = 'http://s2i-java-atlas-core.apps-dev.hbp.eu/'
+base_url = 'http://s2i-java-atlas-core.apps-dev.hbp.eu'
 # base_url = 'http://s2i-java-atlas-core.apps-dev.hbp.eu/' if os.getenv('ATLAS_CORE_ENV') else "http://s2i-java-atlas-core.apps.hbp.eu/"
 
 
-def get_call(url, header=json_header):
+def get_call(url, without_base_url=False, header=json_header):
     try:
-        response = requests.get(base_url + url, headers=header)
+        if without_base_url:
+            response = requests.get(url, headers=header)
+        else:
+            response = requests.get(base_url + url, headers=header)
     except requests.exceptions.RequestException as e:
         print(e)
         response = None
