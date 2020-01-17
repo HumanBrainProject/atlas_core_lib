@@ -8,6 +8,13 @@ base_url = 'http://s2i-java-atlas-core.apps-dev.hbp.eu'
 
 
 def get_call(url, without_base_url=False, header=json_header):
+    """
+    Performs a HTTP-GET call to the Atlas-Core for given url.
+    :param url: relative URL to the base URL
+    :param without_base_url: if set to TRUE, the given URL can be fully qualified and ignores the Atlas-Core base url
+    :param header: Optional request headers. Default header is {'Content-Type': 'application/json'}
+    :return: returns the response if status code is OK, otherwise None
+    """
     try:
         if without_base_url:
             response = requests.get(url, headers=header)
@@ -19,11 +26,13 @@ def get_call(url, without_base_url=False, header=json_header):
     if response is not None and response.status_code == 200:
         return response
     else:
-        print('response', response)
+        print(response.status_code)
+        print(response.content)
+        print(response.reason)
         return None
 
 
-def get_filename_from_header(header):
+def __get_filename_from_header(header):
     name_index = header.index('filename')
     return header[(name_index+9):].replace("\"", "")
 
@@ -31,6 +40,6 @@ def get_filename_from_header(header):
 def download_tvb_data():
     url = base_url + '/tvb/dummy'
     response = get_call(url, zip_header)
-    filename = get_filename_from_header(response.headers.get('Content-Disposition'))
+    filename = __get_filename_from_header(response.headers.get('Content-Disposition'))
     with open(filename, 'wb') as code:
         code.write(response.content)

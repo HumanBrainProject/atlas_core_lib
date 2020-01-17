@@ -1,4 +1,8 @@
 class Region:
+    """Representation of a region with name, referencespace, parcellation and more optional attributes"""
+    name = None
+    referencespace = None
+    parcellation = None
     _name = None
     _area = None
     _average_orientation = None
@@ -12,8 +16,10 @@ class Region:
     _status = None
     _links = None
 
-    def __init__(self, name, **kwargs):
-        self._name = name
+    def __init__(self, name, referencespace, parcellation, **kwargs):
+        self.name = name
+        self.referencespace = referencespace
+        self.parcellation = parcellation
         self._area = kwargs.get('area', None)
         self._average_orientation = kwargs.get('averageOrientation', None)
         self._centres = kwargs.get('centres', None)
@@ -27,7 +33,7 @@ class Region:
         self._links = kwargs.get('links', None)
 
     def __str__(self):
-        return "(name: {0}, rgb: {1})".format(self._name, self._rgb)
+        return "(name: {0}, rgb: {1})".format(self.name, self._rgb)
 
     def __repr__(self):
         return self.__str__()
