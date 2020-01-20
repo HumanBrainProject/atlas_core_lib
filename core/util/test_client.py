@@ -48,6 +48,8 @@ class TestRequestsCall(TestCase):
 
     @mock.patch('requests.get')
     def test_requests_throws_exception(self, mock_get):
+        mock_resp = None
+        mock_get.return_value = mock_resp
         mock_get.side_effect = RequestException()
 
         result = client.get_call(dummy_url, header=json_header)

@@ -26,9 +26,6 @@ def get_call(url, without_base_url=False, header=json_header):
     if response is not None and response.status_code == 200:
         return response
     else:
-        print(response.status_code)
-        print(response.content)
-        print(response.reason)
         return None
 
 
