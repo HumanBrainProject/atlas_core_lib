@@ -42,6 +42,6 @@ Get a single region for a parcellation in a referencespace:
 
 `regions.get_region_by_name('colin', 'JuBrain Cytoarchitectonic Atlas', 'Area Fp1 (FPole) - left hemisphere)`
 
-Retrieve a probability map for a region:
+Retrieve a probability map for a region as a gziped nifti file:
 
 `regions.get_probability_map_for_region('Area_Fp1', Hemisphere.LEFT, 0.2)`

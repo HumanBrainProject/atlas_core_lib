@@ -36,8 +36,7 @@ class TestPmapService(TestCase):
         mock_post.return_value = mock_resp
 
         result = pmap_service.retrieve_probability_map(area_name, hemisphere, threshold)
-        self.assertEqual(result.content, self.valid_result_data)
-        self.assertEqual(result.status_code, 200)
+        self.assertEqual(result, self.valid_result_data)
         mock_post.assert_called_with(url, data=create_body(), headers={'Content-Type': 'application/json'})
 
     @mock.patch('request.post')
