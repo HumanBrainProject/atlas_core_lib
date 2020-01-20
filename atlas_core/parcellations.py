@@ -1,8 +1,8 @@
 import json
 
-from core import regions
-from core.parcellation import Parcellation
-from core.util import client
+from atlas_core import regions
+from atlas_core.parcellation import Parcellation
+from atlas_core.util import client
 
 
 def get_all_parcellations(referencespace):

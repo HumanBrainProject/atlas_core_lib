@@ -3,8 +3,8 @@ from unittest.mock import Mock
 
 from requests import RequestException
 
-from core.util import pmap_service
-from core.util.hemisphere import Hemisphere
+from atlas_core.util import pmap_service
+from atlas_core.util.hemisphere import Hemisphere
 
 
 def _mock_response(status=200, content="CONTENT"):

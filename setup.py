@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="atlas-core-lib",
+    name="atlas_core",
     version="0.0.1",
     author="Vadim Marcenko",
     author_email="v.marcenko@fz-juelich.de",

@@ -1,8 +1,8 @@
 import json
 
-from core.util import client, pmap_service
-from core.region import Region
-from core.util.hemisphere import Hemisphere
+from atlas_core.util import client, pmap_service
+from atlas_core.region import Region
+from atlas_core.util.hemisphere import Hemisphere
 
 
 def get_all_regions(referencespace, parcellation):

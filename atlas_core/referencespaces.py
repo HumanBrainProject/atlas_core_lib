@@ -1,8 +1,8 @@
 import json
 
-from core.util import client
-from core import parcellations
-from core.referencespace import Referencespace
+from atlas_core.util import client
+from atlas_core import parcellations
+from atlas_core.referencespace import Referencespace
 
 
 def get_all_referencespaces():

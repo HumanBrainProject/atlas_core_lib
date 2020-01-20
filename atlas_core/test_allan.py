@@ -1,7 +1,7 @@
 from unittest import TestCase, mock
 from unittest.mock import Mock
 
-from core import allan
+from atlas_core import allan
 
 
 class TestAllanMethods(TestCase):

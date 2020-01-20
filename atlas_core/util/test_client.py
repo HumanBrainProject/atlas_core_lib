@@ -1,7 +1,7 @@
 from unittest import mock, TestCase, main
 from unittest.mock import Mock
 from requests import RequestException
-from core.util import client
+from atlas_core.util import client
 
 json_header = {'Content-Type': 'application/json'}
 base_url = 'http://s2i-java-atlas-core.apps-dev.hbp.eu'
