@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="atlas_core",
-    version="0.0.1",
+    version="0.1.dev1",
     author="Vadim Marcenko",
     author_email="v.marcenko@fz-juelich.de",
     description="Core functionality for the atlas viewer",
