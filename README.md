@@ -5,9 +5,8 @@ This library is a wrapper for the Atlas Core REST API
 Author: Vadim Marcenko
 
 ## Installation
-In future:
 
-`pip install atlas-core-lib`
+`pip install atlas-core`
 
 ## Basic setup
 
