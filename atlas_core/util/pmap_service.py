@@ -12,7 +12,7 @@ def retrieve_probability_map(area_name, hemisphere, threshold):
     :param area_name: Name of the area
     :param hemisphere: The Hemisphere. Should be provided through the enum
     :param threshold: Threshold or the probability map
-    :return: returns the response if status is OK, otherwise None
+    :return: returns the nii file if status is OK, otherwise None
     """
     try:
         data = '{ "areas": [{"name": "' + area_name + \
