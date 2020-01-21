@@ -6,7 +6,7 @@ from atlas_core import allan
 
 class TestAllanMethods(TestCase):
 
-    @mock.patch('core.util.client.get_call')
+    @mock.patch('atlas_core.util.client.get_call')
     def test_get_structure(self, mock_get_call):
         def mock_decode(encoding):
             return '{"value": "test"}'

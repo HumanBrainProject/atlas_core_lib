@@ -30,7 +30,7 @@ class TestPmapService(TestCase):
 
     valid_result_data = 'RESULT_DATA'
 
-    @mock.patch('request.post')
+    @mock.patch('requests.post')
     def test_valid_response(self, mock_post):
         mock_resp = _mock_response(content=self.valid_result_data)
         mock_post.return_value = mock_resp
@@ -39,7 +39,7 @@ class TestPmapService(TestCase):
         self.assertEqual(result, self.valid_result_data)
         mock_post.assert_called_with(url, data=create_body(), headers={'Content-Type': 'application/json'})
 
-    @mock.patch('request.post')
+    @mock.patch('requests.post')
     def test_content_not_none_but_wrong_status(self, mock_post):
         mock_resp = _mock_response(content=self.valid_result_data, status=418)
         mock_post.return_value = mock_resp
@@ -47,7 +47,7 @@ class TestPmapService(TestCase):
         result = pmap_service.retrieve_probability_map(area_name, hemisphere, threshold)
         self.assertEqual(result, None)
 
-    @mock.patch('request.post')
+    @mock.patch('requests.post')
     def test_content_none(self, mock_post):
         mock_resp = None
         mock_post.return_value = mock_resp
@@ -55,7 +55,7 @@ class TestPmapService(TestCase):
         result = pmap_service.retrieve_probability_map(area_name, hemisphere, threshold)
         self.assertEqual(result, None)
 
-    @mock.patch('request.post')
+    @mock.patch('requests.post')
     def test_requests_throws_exception(self, mock_post):
         mock_resp = None
         mock_post.return_value = mock_resp
