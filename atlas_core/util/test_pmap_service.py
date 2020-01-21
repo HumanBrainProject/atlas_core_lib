@@ -28,16 +28,18 @@ def create_body():
 
 class TestPmapService(TestCase):
 
-    valid_result_data = 'RESULT_DATA'
-
+    @mock.patch('gzip.decompress')
     @mock.patch('requests.post')
-    def test_valid_response(self, mock_post):
+    def test_valid_response(self, mock_post, mock_gzip):
         mock_resp = _mock_response(content=self.valid_result_data)
         mock_post.return_value = mock_resp
+        mock_gzip.return_value = self.valid_result_data
 
         result = pmap_service.retrieve_probability_map(area_name, hemisphere, threshold)
         self.assertEqual(result, self.valid_result_data)
         mock_post.assert_called_with(url, data=create_body(), headers={'Content-Type': 'application/json'})
+
+    valid_result_data = 'RESULT_DATA'
 
     @mock.patch('requests.post')
     def test_content_not_none_but_wrong_status(self, mock_post):

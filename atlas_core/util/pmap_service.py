@@ -1,3 +1,5 @@
+import gzip
+
 import requests
 
 # URL for the pmap-service
@@ -20,13 +22,12 @@ def retrieve_probability_map(area_name, hemisphere, threshold):
         print(e)
         response = None
     if response is not None and response.status_code == 200:
-        return response.content
+        return gzip.decompress(response.content)
     else:
         print('response', response)
         return None
 
 
 if __name__ == '__main__':
-    roi = retrieve_probability_map('Area-Fp1', 'left', 0.7)
-    print(roi.content)
-    print(roi.status_code)
+    roi = retrieve_probability_map('Area-Fp1', 'left', 0.2)
+    print(roi)
