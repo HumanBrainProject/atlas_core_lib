@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Removing old dist directory"
-rm -r dist/*
+rm -rf dist/*
 
 echo "Installing and upgrading twine, setuptools and wheel"
 python3 -m pip install --user --upgrade twine setuptools wheel
