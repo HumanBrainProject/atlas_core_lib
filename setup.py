@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="atlas_core",
+    name="ebrains-atlascore",
     version="0.0.1.dev1",
     author="Vadim Marcenko",
     author_email="v.marcenko@fz-juelich.de",
