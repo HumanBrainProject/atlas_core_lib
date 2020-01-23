@@ -6,7 +6,7 @@ Author: Vadim Marcenko
 
 ## Installation
 
-`pip install atlas-core`
+`pip install ebrains-atlascore`
 
 ## Basic setup
 
@@ -43,4 +43,4 @@ Get a single region for a parcellation in a referencespace:
 
 Retrieve a probability map for a region as a nifti file:
 
-`regions.get_probability_map_for_region('Area_Fp1', Hemisphere.LEFT, 0.2)`
+`regions.get_probability_map_for_region(Region('Area_Fp1', 'colin', 'JuBrain Cytoarchitectonic Atlas'), Hemisphere.LEFT, 0.2)`
