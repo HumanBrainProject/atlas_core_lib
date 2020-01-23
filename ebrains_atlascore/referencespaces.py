@@ -1,8 +1,8 @@
 import json
 
-from atlas_core.util import client
-from atlas_core import parcellations
-from atlas_core.referencespace import Referencespace
+from ebrains_atlascore.util import client
+from ebrains_atlascore import parcellations
+from ebrains_atlascore.referencespace import Referencespace
 
 
 def get_all_referencespaces():

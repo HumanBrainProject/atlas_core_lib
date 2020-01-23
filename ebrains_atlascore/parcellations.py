@@ -1,8 +1,8 @@
 import json
 
-from atlas_core import regions
-from atlas_core.parcellation import Parcellation
-from atlas_core.util import client
+from ebrains_atlascore import regions
+from ebrains_atlascore.parcellation import Parcellation
+from ebrains_atlascore.util import client
 
 
 def get_all_parcellations(referencespace):

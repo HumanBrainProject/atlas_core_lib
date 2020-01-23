@@ -5,10 +5,10 @@ class Roi:
     """
 
     def __init__(self, data, region, hemisphere, threshold):
-        self._data = data
-        self._region = region
-        self._hemisphere = hemisphere
-        self._threshold = threshold
+        self.data = data
+        self.region = region
+        self.hemisphere = hemisphere
+        self.threshold = threshold
 
     def save(self, filename):
         file = filename if filename.endswith(".nii") else filename+".nii"

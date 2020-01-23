@@ -2,10 +2,10 @@ import gzip
 
 import requests
 
-from atlas_core.Roi import Roi
+from ebrains_atlascore.Roi import Roi
 
 # URL for the pmap-service
-from atlas_core.region import Region
+from ebrains_atlascore.region import Region
 
 url = 'http://pmap-pmap-service.apps-dev.hbp.eu/multimerge'
 
