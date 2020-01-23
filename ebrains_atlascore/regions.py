@@ -37,12 +37,12 @@ def get_region_by_name(referencespace, parcellation, region):
     return None
 
 
-def get_probability_map_for_region(region_name, hemisphere, threshold):
-    return pmap_service.retrieve_probability_map(region_name, hemisphere, threshold)
+def get_probability_map_for_region(region, hemisphere, threshold):
+    return pmap_service.retrieve_probability_map(region, hemisphere, threshold)
 
 
 if __name__ == '__main__':
     print('************************************************')
     print(get_region_by_name('colin', 'JuBrain Cytoarchitectonic Atlas', 'LB (Amygdala) - left hemisphere'))
     print(get_region_by_name('tvb', 'tvb', 'Left-Frontal-pole'))
-    print(get_probability_map_for_region('Area-Fp1', Hemisphere.LEFT.value, 0.2))
+    print(get_probability_map_for_region(Region('Area-Fp1', 'colin', 'par1'), Hemisphere.LEFT.value, 0.2))
