@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="ebrains-atlascore",
-    version="0.0.3.dev1",
+    version="0.0.4.dev1",
     author="Vadim Marcenko",
     author_email="v.marcenko@fz-juelich.de",
     description="Core functionality for the atlas viewer",

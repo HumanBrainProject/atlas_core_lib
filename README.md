@@ -13,7 +13,7 @@ Author: Vadim Marcenko
 The library is using the latest production version of the Atlascore API.
 If you want to use a development version you have to set it as an environment variable:
 
-`export ATLAS_CORE_ENV=DEV`
+`export ATLASCORE_ENV=DEV`
 
 ## Basic Usage with examples
 
