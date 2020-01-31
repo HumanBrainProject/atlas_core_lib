@@ -3,8 +3,7 @@ import os
 
 json_header = {'Content-Type': 'application/json'}
 zip_header = {'Content-Type': 'application/zip'}
-base_url = 'http://s2i-java-atlas-core.apps-dev.hbp.eu'
-# base_url = 'http://s2i-java-atlas-core.apps-dev.hbp.eu/' if os.getenv('ATLAS_CORE_ENV') else "http://s2i-java-atlas-core.apps.hbp.eu/"
+base_url = 'https://ebrains-atlascore.apps-dev.hbp.eu/' if os.getenv('ATLASCORE_ENV') else 'https://ebrains-atlascore.apps.hbp.eu/'
 
 
 def get_call(url, without_base_url=False, header=json_header):

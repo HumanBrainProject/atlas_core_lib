@@ -13,10 +13,10 @@ class Roi:
     def save(self, filename):
         file = filename if filename.endswith(".nii") else filename+".nii"
         with open(file, 'wb') as f:
-            f.write(self._data)
+            f.write(self.data)
 
     def __str__(self):
-        return "Roi(Region = {0})".format(self._region)
+        return "Roi(Region = {0})".format(self.region)
         pass
 
     def __repr__(self):

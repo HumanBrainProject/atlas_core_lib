@@ -1,6 +1,6 @@
-# Atlas Core lib 
+# Ebrains Atlascore python library 
 
-This library is a wrapper for the Atlas Core REST API
+This library is a wrapper for the [ebrains atlascore](https://ebrains-atlascore.apps.hbp.eu/) REST API
 
 Author: Vadim Marcenko
 
@@ -10,7 +10,7 @@ Author: Vadim Marcenko
 
 ## Basic setup
 
-The library is using the latest production version of the Atlas Core API.
+The library is using the latest production version of the Atlascore API.
 If you want to use a development version you have to set it as an environment variable:
 
 `export ATLAS_CORE_ENV=DEV`
@@ -41,6 +41,6 @@ Get a single region for a parcellation in a referencespace:
 
 `regions.get_region_by_name('colin', 'JuBrain Cytoarchitectonic Atlas', 'Area Fp1 (FPole) - left hemisphere)`
 
-Retrieve a probability map for a region as a nifti file:
+Retrieve a probability map for a region as a ROI:
 
-`regions.get_probability_map_for_region(Region('Area_Fp1', 'colin', 'JuBrain Cytoarchitectonic Atlas'), Hemisphere.LEFT, 0.2)`
+`regions.get_probability_map_for_region(Region('Area_Fp1', 'colin', 'JuBrain Cytoarchitectonic Atlas'), Hemisphere.LEFT.value, 0.2)`
