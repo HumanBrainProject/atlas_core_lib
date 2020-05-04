@@ -43,4 +43,4 @@ Get a single region for a parcellation in a referencespace:
 
 Retrieve a probability map for a region as a ROI:
 
-`regions.get_probability_map_for_region(Region('Area_Fp1', 'colin', 'JuBrain Cytoarchitectonic Atlas'), Hemisphere.LEFT.value, 0.2)`
+`regions.get_probability_map_for_region(Region('Area-Fp1', 'colin', 'JuBrain Cytoarchitectonic Atlas'), Hemisphere.LEFT.value, 0.2)`
