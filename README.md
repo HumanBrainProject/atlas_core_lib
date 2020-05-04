@@ -70,6 +70,6 @@ Retrieve a probability map for a region as a ROI:
 from ebrains_atlascore import regions
 from ebrains_atlascore.util.hemisphere import Hemisphere
 from ebrains_atlascore.region import Region
-pmap = regions.get_probability_map_for_region(Region('Area_Fp1', 'colin', 'JuBrain Cytoarchitectonic Atlas'), Hemisphere.LEFT.value, 0.2)
+pmap = regions.get_probability_map_for_region(Region('Area-Fp1', 'colin', 'JuBrain Cytoarchitectonic Atlas'), Hemisphere.LEFT.value, 0.2)
 print(pmap)
 ```
