@@ -18,6 +18,7 @@ def get_all_parcellations(referencespace):
         for parcellation in parcellations:
             result.append(Parcellation(
                 parcellation['parcellation']['name'],
+                parcellation['parcellation']['id'],
                 referencespace,
                 regions.get_all_regions(referencespace, parcellation['parcellation']['name'])
             ))
@@ -36,6 +37,7 @@ def get_parcellation_by_name(referencespace, parcellation):
         parcellation = json.loads(get_result.content.decode('utf-8'))
         return Parcellation(
             parcellation['parcellation']['name'],
+            parcellation['parcellation']['id'],
             referencespace,
             regions.get_all_regions(referencespace, parcellation['parcellation']['name'])
         )
@@ -43,6 +45,7 @@ def get_parcellation_by_name(referencespace, parcellation):
 
 
 if __name__ == '__main__':
-    print(get_all_parcellations('colin'))
+    print(get_all_parcellations('dafcffc5-4826-4bf1-8ff6-46b8a31ff8e2'))
     print('************************************************')
-    print(get_parcellation_by_name('colin', 'JuBrain Cytoarchitectonic Atlas'))
+    print(get_parcellation_by_name('dafcffc5-4826-4bf1-8ff6-46b8a31ff8e2', 'JuBrain+Cytoarchitectonic+Atlas'))
+    print(get_parcellation_by_name('dafcffc5-4826-4bf1-8ff6-46b8a31ff8e2', '4ac9f0bc-560d-47e0-8916-7b24da9bb0ce'))

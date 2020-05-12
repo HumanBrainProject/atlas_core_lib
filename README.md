@@ -21,25 +21,25 @@ Get all referencespaces known by the atlas-core:
 
 `referencespaces.get_all_referencespaces()`
 
-Get a single referencespace by a given name:
+Get a single referencespace by a given id (KnowledgeGraph id):
 
-`referencespaces.get_referencespace_by_name('colin')`
+`referencespaces.get_referencespace_by_id('dafcffc5-4826-4bf1-8ff6-46b8a31ff8e2')`
 
-Get all parcellations for a referencespace name:
+Get all parcellations for a referencespace id:
 
-`parcellations.get_all_parcellations('colin')`
+`parcellations.get_all_parcellations('dafcffc5-4826-4bf1-8ff6-46b8a31ff8e2')`
 
-Get a single parcellation for a reference name:
+Get a single parcellation for a reference id:
 
-`parcellations.get_parcellation_by_name('colin', 'JuBrain Cytoarchitectonic Atlas')`
+`parcellations.get_parcellation_by_name('dafcffc5-4826-4bf1-8ff6-46b8a31ff8e2', 'JuBrain+Cytoarchitectonic+Atlas')`
 
 Get all regions for a parcellation in a referencespace:
 
-`regions.get_all_regions('colin', 'JuBrain Cytoarchitectonic Atlas')`
+`regions.get_all_regions('dafcffc5-4826-4bf1-8ff6-46b8a31ff8e2', 'JuBrain+Cytoarchitectonic+Atlas')`
 
 Get a single region for a parcellation in a referencespace:
 
-`regions.get_region_by_name('colin', 'JuBrain Cytoarchitectonic Atlas', 'Area Fp1 (FPole) - left hemisphere)`
+`regions.get_region_by_name('dafcffc5-4826-4bf1-8ff6-46b8a31ff8e2', 'JuBrain+Cytoarchitectonic+Atlas', 'Area Fp1 (FPole) - left hemisphere)`
 
 Retrieve a probability map for a region as a ROI:
 

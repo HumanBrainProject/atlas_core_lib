@@ -43,6 +43,7 @@ def get_probability_map_for_region(region, hemisphere, threshold):
 
 if __name__ == '__main__':
     print('************************************************')
-    print(get_region_by_name('colin', 'JuBrain Cytoarchitectonic Atlas', 'LB (Amygdala) - left hemisphere'))
+    print(get_all_regions('dafcffc5-4826-4bf1-8ff6-46b8a31ff8e2', 'JuBrain+Cytoarchitectonic+Atlas'))
+    print(get_region_by_name('dafcffc5-4826-4bf1-8ff6-46b8a31ff8e2', 'JuBrain+Cytoarchitectonic+Atlas', 'LB (Amygdala) - left hemisphere'))
     print(get_region_by_name('tvb', 'tvb', 'Left-Frontal-pole'))
     print(get_probability_map_for_region(Region('Area-Fp1', 'colin', 'par1'), Hemisphere.LEFT.value, 0.2))
