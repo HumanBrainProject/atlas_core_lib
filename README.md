@@ -1,3 +1,6 @@
+!!! warning
+    This repository is deprecated. Please refer to <https://github.com/fzj-inm1-bda/siibra-python/> for the latest developments
+
 # Ebrains Atlascore python library 
 
 This library is a wrapper for the [ebrains atlascore](https://ebrains-atlascore.apps.hbp.eu/) REST API
